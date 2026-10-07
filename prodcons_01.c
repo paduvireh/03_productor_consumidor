@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #define MAXPRODUCING 10
 #define MAXAPPENDING 10
@@ -67,4 +68,30 @@ int main(int argc, char **argv) {
 
 }
 
+void produce()
+{
+    out("[P] Producing\n");
+    _wait(MAXPRODUCING);
+    out("[P] Produced\n");
+}
 
+void append()
+{
+    out("[P] \t Appending\n");
+    _wait(MAXAPPENDING);
+    out("[P] \t Appended\n");
+}
+
+void take()
+{
+    out("[C] Taking\n");
+    _wait(MAXTAKING);
+    out("[C] Taked\n");
+}
+
+void consume()
+{
+    out("[C] \t Consuming\n");
+    _wait(MAXCONSUMING);
+    out("[C] \t Consumed\n");
+}
